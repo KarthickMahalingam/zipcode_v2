@@ -1,7 +1,7 @@
 # zipcode_v2
 Service to merge shipment zipcodes
 
-##BACKGROUND 
+## BACKGROUND 
 Sometimes items cannot be shipped to certain zip codes, and the rules for these restrictions are stored as a series of ranges of 5 digit codes. For example if the ranges are:
 
 [94133,94133] [94200,94299] [94600,94699]
@@ -10,10 +10,10 @@ Then the item can be shipped to zip code 94199, 94300, and 65532, but cannot be 
 
 Any item might be restricted based on multiple sets of these ranges obtained from multiple sources.
 
-##PROBLEM 
+## PROBLEM 
 Given a collection of 5-digit ZIP code ranges (each range includes both their upper and lower bounds), provide an algorithm that produces the minimum number of ranges required to represent the same restrictions as the input.
 
-##NOTES
+## NOTES
 
 * The ranges above are just examples, your implementation should work for any set of arbitrary ranges
 * Ranges may be provided in arbitrary order
@@ -31,7 +31,7 @@ Your work will be evaluated against the following criteria:
 * Design choices and overall code organization
 * Code quality and best practices
 
-#Assumptions:
+# Assumptions:
 Assuming the zipcode json is coming as a file with just zipcode ranges of below json format:
 
 ```
@@ -41,13 +41,13 @@ Assuming the zipcode json is coming as a file with just zipcode ranges of below 
 ]
 ```
 
-##Datastructures used:
+## Datastructures used:
 I have used LinkedList to store and merge the shipment zipcodes. LinkedList is used because it's very easy to insert zipcode in middle.
 
-##Project type:
+## Project type:
 I have used maven to build the service
 
-##File structure:
+## File structure:
 * config
     * ZipcodeDeserializer - To deserialize shipment zipcode json array
 * entity
@@ -62,7 +62,7 @@ I have used maven to build the service
 
 * resources - Place to keep the input shipment zipcodes and configuration properties
 
-##Test:
+## Test:
 * Used Junit with PowerMock runner to unit test the features
 * Wrote unit test for each Java file segregated feature
 
