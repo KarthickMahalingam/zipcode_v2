@@ -42,6 +42,7 @@ public class ZipcodeMergerImpl implements ZipcodeMerger {
     public void mergeZipCode(ShipmentZipcode zipcodeData) {
         List<Zipcode> mergedZipcode = parseAndMergeZipCode(zipcodeData.getZipcode());
         log.info("Merged zipcode for: {}", zipcodeData.toString());
+        log.info("Result:");
         for (Zipcode zipcode : mergedZipcode) {
             log.info("[{}, {}] ",zipcode.getStartRange(), zipcode.getEndRange());
         }
